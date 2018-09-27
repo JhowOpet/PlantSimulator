@@ -41,6 +41,9 @@ public class InitialActivity extends AppCompatActivity {
             // recuperarDadosUsuario();
 
             textLogin.setText("Email: " + email);
+            //textNome.setText("Nome: " + nome);
+            //imgPerfil.set
+
         }
     }
 
