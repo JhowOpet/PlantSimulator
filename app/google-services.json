@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "368019265789-a3koel3q2j8rkguh1ic28jtjvjtq698h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "plantsimulator.org.plantsimulator",
+            "certificate_hash": "cd47348bd0612b5a75f54ceb7ee772e0d15021f4"
+          }
+        },
+        {
           "client_id": "368019265789-ki6l9jaukuvf533dbmn9l22gl14thfol.apps.googleusercontent.com",
           "client_type": 3
         }

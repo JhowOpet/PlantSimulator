@@ -5,30 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="plantsimulator.org.plantsimulator.LoginActivity">
+    tools:context="plantsimulator.org.plantsimulator.InitialActivity">
 
-    <EditText
-        android:id="@+id/editLogin"
+    <TextView
+        android:id="@+id/textNome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"/>
+        android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/editSenha"
+    <TextView
+        android:id="@+id/textLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Senha"/>
+        android:layout_height="wrap_content" />
 
     <Button
-        android:layout_width="99dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="logar"
-        android:text="Logar" />
+        android:onClick="telaEditarPerfil"
+        android:text="Editar Perfil" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="telaSignUp"
-        android:text="Sou Novo" />
+        android:onClick="sair"
+        android:text="Sair" />
 
 </LinearLayout>
