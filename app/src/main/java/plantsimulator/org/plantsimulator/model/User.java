@@ -2,8 +2,6 @@ package plantsimulator.org.plantsimulator.model;
 
 import android.net.Uri;
 
-import java.net.URI;
-
 /**
  * Created by opet on 27/09/2018.
  */
@@ -11,12 +9,12 @@ import java.net.URI;
 public class User {
 
     private String nome;
-    private URI uriFoto;
+    private Uri uriFoto;
 
-    public User(String nome, Uri uriFoto) {
+    public User() {
     }
 
-    public User(String nome, URI uriFoto) {
+    public User(String nome, Uri uriFoto) {
         this.nome = nome;
         this.uriFoto = uriFoto;
     }
@@ -29,11 +27,11 @@ public class User {
         this.nome = nome;
     }
 
-    public URI getUriFoto() {
+    public Uri getUriFoto() {
         return uriFoto;
     }
 
-    public void setUriFoto(URI uriFoto) {
+    public void setUriFoto(Uri uriFoto) {
         this.uriFoto = uriFoto;
     }
 
