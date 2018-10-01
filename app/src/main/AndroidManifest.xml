@@ -26,6 +26,12 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".InitialActivity" />
         <activity android:name=".EditarPerfilActivity"></activity>
+        <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
+
+        <activity android:name="me.iwf.photopicker.PhotoPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

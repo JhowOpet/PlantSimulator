@@ -9,13 +9,15 @@ import android.net.Uri;
 public class User {
 
     private String nome;
+    private String nomeFoto;
     private Uri uriFoto;
 
     public User() {
     }
 
-    public User(String nome, Uri uriFoto) {
+    public User(String nome, String nomeFoto, Uri uriFoto) {
         this.nome = nome;
+        this.nomeFoto = nomeFoto;
         this.uriFoto = uriFoto;
     }
 
@@ -25,6 +27,14 @@ public class User {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getNomeFoto() {
+        return nomeFoto;
+    }
+
+    public void setNomeFoto(String nomeFoto) {
+        this.nomeFoto = nomeFoto;
     }
 
     public Uri getUriFoto() {

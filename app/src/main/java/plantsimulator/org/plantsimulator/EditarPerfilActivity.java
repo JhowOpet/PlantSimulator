@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -75,19 +74,19 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
             editEmail.setText(email);
             recuperarDadosUsuario(currentUser.getUid().toString());
 
-
-            //imgPerfil.set
         }
     }
 
     public void recuperarDadosUsuario(String uid){
 
-        Query mQuery = mDatabase.child("users").child(uid).child("nome");
+        Query mQuery = mDatabase.child("users").child(uid);
         mQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String nome = dataSnapshot.getValue(String.class);
-                editNome.setText(nome);
+                User usuario;
+                usuario = dataSnapshot.getValue(User.class);
+                editNome.setText(usuario.getNome());
+
                 Log.e("Get dados usuario: ", "Sucesso.");
             }
 
@@ -106,14 +105,12 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         String uid = currentUser.getUid().toString();
-        Uri file = Uri.fromFile(new File(photos.get(0)));
-
-        User user = new User();
-        user.setNome(editNome.getText().toString());
-        user.setUriFoto(file);
 
         // Salvar email
         salvarDadosAutenticacao(currentUser);
+
+        User user = new User();
+        user.setNome(editNome.getText().toString());
 
         // Salvar foto
         salvarFoto(view, uid, user);
@@ -169,14 +166,17 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
 
     public void salvarFoto(View view, String uid, User user){
         if(photos.size() > 0){
+            Uri file = Uri.fromFile(new File(photos.get(0)));
             String[] splitted = photos.get(0).split("/");
-            String filename = splitted[splitted.length-1];
+            //String filename = splitted[splitted.length-1];
 
-            long timeStampName = new Timestamp(System.currentTimeMillis()).getTime();
+            //long timeStampName = new Timestamp(System.currentTimeMillis()).getTime();
 
-            StorageReference photoRef = mStorageRef.child("images/"+uid+'-'+timeStampName);
+            user.setNomeFoto(uid);
 
-            photoRef.putFile(user.getUriFoto())
+            StorageReference photoRef = mStorageRef.child("images/"+user.getNomeFoto());
+
+            photoRef.putFile(file)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
