@@ -31,7 +31,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import me.iwf.photopicker.PhotoPicker;
